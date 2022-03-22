@@ -1,38 +1,177 @@
-.App {
-  text-align: center;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+html,
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: url("https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/620bd6d655f2044afa28bff4_glassmorphism.jpeg");
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  width: 100vw;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.top-wrapper {
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  height: 150px;
+  top: 0;
+}
+
+.top-wrapper h1 {
+  margin: 0;
+  font-size: 2.6rem;
+  letter-spacing: 10px;
+  text-shadow: 0 2px 2px black;
+}
+
+.top-wrapper h2 {
+  letter-spacing: 5px;
+  text-shadow: 0 2px 2px black;
+}
+.bottom-wrapper {
+  display: flex;
+  height: calc(100vh - 150px);
+  margin-top: 150px;
+}
+
+.container-avatar {
+  height: auto;
+  width: calc(100% / 2);
+  position: sticky;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+}
+
+.character {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 0 auto;
+  padding: 30px;
+
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.character-image {
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.character-image img {
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.btn {
+  width: auto;
+  margin: 20px auto;
+  padding: 10px 30px;
+  color: white;
+  background: transparent;
+  border: 3px solid white;
+  border-radius: 10px;
+
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 3px solid rgba(255, 255, 255, 0.18);
+}
+
+.container-part {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 80%;
+}
+
+.title-part {
+  text-transform: uppercase;
+
+  letter-spacing: 10px;
+  color: white;
+  text-shadow: 0 2px 2px black;
+}
+
+.item-part {
+  width: 100%;
+  margin: 20px 10px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 5px solid white;
+}
+
+.image-part {
+  display: inline-block;
+  cursor: pointer;
+  margin: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.2s ease;
+}
+
+.image-part:hover,
+.active {
+  border: 1px solid rgba(255, 255, 255);
+
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.8)
+  );
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+  transform: translateY(-5px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.image-part img {
+  width: 100%;
+  height: 100%;
 }
