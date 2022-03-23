@@ -33,7 +33,6 @@ function App() {
   };
 
   const changeStyle = (partName, valueChange) => {
-
     const indexActive = arrStyle?.findIndex(
       (item) => item.partName === partName
     );
@@ -61,7 +60,7 @@ function App() {
         </div>
         <div className="container-part">
           {arrStyle?.map((part, index) => {
-            if (part.partName === "noses") return;
+            if (part.partName === "noses") return null;
             return (
               <Fragment key={index}>
                 <PartComponent part={part} changeStyle={changeStyle} />
