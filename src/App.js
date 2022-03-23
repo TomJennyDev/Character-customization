@@ -33,7 +33,6 @@ function App() {
   };
 
   const changeStyle = (partName, valueChange) => {
-    console.log(valueChange);
 
     const indexActive = arrStyle?.findIndex(
       (item) => item.partName === partName
