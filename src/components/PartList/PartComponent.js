@@ -10,7 +10,7 @@ const PartComponent = ({ part, changeStyle }) => {
         const className = `image-part ${isActive ? "active" : ""}`;
         return (
           <Fragment key={index}>
-            <a
+            <span
               className={className}
               onClick={() => changeStyle(part.partName, index + 1)}
             >
@@ -19,8 +19,9 @@ const PartComponent = ({ part, changeStyle }) => {
                   process.env.PUBLIC_URL +
                   generationPath(part.partName, index + 1)
                 }
+                alt={part.partName}
               />
-            </a>
+            </span>
           </Fragment>
         );
       })}

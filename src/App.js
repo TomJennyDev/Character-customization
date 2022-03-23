@@ -59,14 +59,16 @@ function App() {
           <AvatarComponent arrStyle={arrStyle} randomNumber={randomNumber} />
         </div>
         <div className="container-part">
-          {arrStyle?.map((part, index) => {
-            if (part.partName === "noses") return null;
-            return (
-              <Fragment key={index}>
-                <PartComponent part={part} changeStyle={changeStyle} />
-              </Fragment>
-            );
-          })}
+          {arrStyle
+            ?.filter((part, index) => part.partName !== "noses")
+            .map((part, index) => {
+              return (
+                <Fragment key={index}>
+                  <PartComponent part={part} changeStyle={changeStyle} />
+                </Fragment>
+              );
+            })}
+          )}
         </div>
       </div>
     </div>
