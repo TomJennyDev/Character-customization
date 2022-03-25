@@ -7,7 +7,9 @@ const PartComponent = ({ part, changeStyle }) => {
       <h1 className="title-part">{part.partName}</h1>
       {Array.from(Array(part?.value).keys())?.map((index) => {
         const isActive = part.activePart === index + 1;
-        const className = `image-part ${isActive ? "active" : ""}`;
+        const className = `image-part ${
+          /\(L3\)/.test(part.partName) ? "clothes-l3" : part.partName
+        } ${isActive ? "active" : ""}`;
         return (
           <Fragment key={index}>
             <span

@@ -14,10 +14,10 @@ const totalPart = [
   { partName: "eyebrows", value: 15 },
   { partName: "glasses", value: 17 },
   { partName: "hair", value: 73 },
+  { partName: "neckwear", value: 18 },
   { partName: "facial_hair", value: 17 },
   { partName: "hats", value: 28 },
   { partName: "earrings", value: 28 },
-  { partName: "neckwear", value: 18 },
 ];
 
 function App() {
@@ -52,7 +52,6 @@ function App() {
       <div className="top-wrapper">
         <h1>CHARACTER</h1>
         <h2>🛠️CUSTOMIZATION🛠️</h2>
-        <hr />
       </div>
       <div className="bottom-wrapper">
         <div className="container-avatar">
@@ -68,7 +67,6 @@ function App() {
                 </Fragment>
               );
             })}
-          )}
         </div>
       </div>
     </div>

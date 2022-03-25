@@ -21,7 +21,7 @@ const AvatarComponent = ({ arrStyle, randomNumber }) => {
           );
         })}
       </div>
-      <button class="btn btn-random" onClick={() => randomNumber()}>
+      <button className="btn btn-random" onClick={() => randomNumber()}>
         ramdomize!
       </button>
     </Fragment>

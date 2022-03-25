@@ -24,6 +24,7 @@ body {
   width: 100%;
   height: 150px;
   top: 0;
+  border-bottom: 1px solid white;
 }
 
 .top-wrapper h1 {
@@ -39,15 +40,14 @@ body {
 }
 .bottom-wrapper {
   display: flex;
+  flex-direction: row;
   height: calc(100vh - 150px);
   margin-top: 150px;
 }
 
 .container-avatar {
   height: auto;
-  width: calc(100% / 2);
-  position: sticky;
-  left: 0;
+  flex: 45%;
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -112,14 +112,32 @@ body {
 
 .container-part {
   padding: 10px;
+  flex: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-
+  height: calc(100vh -160px);
   overflow-y: scroll;
   overflow-x: hidden;
-  width: 80%;
+  scrollbar-color: auto transparent;
+}
+.container-part::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.container-part::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+.container-part::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .title-part {
@@ -153,6 +171,35 @@ body {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.mouths.mouths.mouths img {
+  transform: scale(2.4);
+}
+.eyebrows.eyebrows.eyebrows img {
+  transform: scale(2.5) translateY(14%);
+}
+.glasses.glasses.glasses img {
+  transform: scale(1.4) translateY(14%);
+}
+
+.facial_hair.facial_hair.facial_hair img {
+  transform: scale(1.5);
+}
+
+.earrings.earrings.earrings img {
+  transform: scale(2.6) translate(-22%, -5%);
+}
+
+.clothes-l3.clothes-l3.clothes-l3 img {
+  transform: scale(1.8) translate(-1%, -25%);
+}
+.neckwear.neckwear.neckwear img {
+  transform: scale(2) translateY(-30%);
+}
+.eyes.eyes.eyes img {
+  transform: scale(2.1) translateY(10%);
 }
 
 .image-part:hover,
@@ -174,4 +221,41 @@ body {
 .image-part img {
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 800px) {
+  .top-wrapper {
+    position: relative;
+    height: 13vh;
+  }
+
+  .top-wrapper h1 {
+    font-size: 2rem;
+  }
+  .top-wrapper h2 {
+    font-size: 1.2rem;
+  }
+  .character {
+    width: 260px;
+    height: 260px;
+  }
+  .bottom-wrapper {
+    margin-top: 0 !important;
+    flex-wrap: wrap;
+    height: 87vh;
+  }
+
+  .container-avatar {
+    flex: 100% !important;
+    height: 45%;
+  }
+  .container-part {
+    border-top: 1px solid white;
+    flex: 100% !important;
+    height: 55%;
+  }
+
+  .btn {
+    margin-bottom: 0;
+  }
 }
